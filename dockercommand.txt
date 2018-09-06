@@ -1,0 +1,67 @@
+Docker command
+
+docker version
+docker info
+docker images---> to see the list of images
+docker ps ---> showing the list of container which are running
+docker ps -a ---> showing the list of all container which are running 
+docker run <image_name>:<tag_name> echo 'hellow world'---> to see the output of container
+docker run -i -t <image_name>--> go to command promt of the container
+-i --> interactive
+-t --> sudo tty console terminal
+exit---> to come out of the container
+docker diff <new_container_id>
+docker rm <container_id> OR < list of id >----> to deletd the container
+docker rm $(docker ps -aq)---> will remove all the container at once
+docker stop <container_id> 
+docker start < container_id> <container_name>
+docker run -d <image_name> ---> demon to run in back ground{ -d for runing in background}
+docker log <on particular container_id> ---> to see the logs on particular container
+docker attach <container_id>----> we can see the rela time output of particular container. We can stop that by "clt + D"
+docker inspect <container_id>----> will give you the information of conatiner
+	eg:-  docker inspect  -f "{{.Name}} {{.Config.Cmd}}" $(docker ps -a -q)
+	docker inspect --format '{{ .NetworkSettings.IPAddress }}' 2e23d01384ac
+docker run -it --rm busybox sh ----> If you dont want keep the container in the 
+memory, just use it and rm as soon as you exit
+docker run -d -p 80 nginx
+docker run -it --rm -e logpath=/home busybox sh---> this is how you define 
+environmnet variable
+docker run -it -v /home/docker/www:/docker busybox sh-----> mount the volume
+
+stop all containers:
+docker kill $(docker ps -q)
+
+remove all containers
+docker rm $(docker ps -a -q)
+
+remove all docker images
+docker rmi $(docker images -q)
+
+remove all docker volumes
+docker volume ls -qf dangling=true | xargs -r docker volume rm
+
+*****find the ip of docker container*******************
+http://networkstatic.net/10-examples-of-how-to-get-docker-container-ip-address/
+
+
+http://www.thegeekstuff.com/2012/03/virtualbox-guest-additions/
+http://ask.xmodulo.com/access-nat-guest-from-host-virtualbox.html
+http://www.serverlab.ca/tutorials/linux/administration-linux/configure-centos-6-network-settings/
+
+
+
+*******************************************************
+So now you can run any command in running container just knowing its ID (or name):
+
+docker exec <container_id_or_name> echo "Hello from container!"
+
+Upd: Note that exec command works only on already running container. If the containeris currently stopped, you need to first run it with the following command:
+
+docker run -it -d shykes/pybuilder /bin/bash
+
+How to give ur own container name :**** docker run --name searchhead -d busybox sleep 100
+
+The most important here is the -d option, which stands for detached. 
+It means that command you initially provided to the container (/bin/bash) 
+will be run in background and the container will not stop immediately.
+******************************************************************************
