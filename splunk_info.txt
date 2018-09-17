@@ -16,3 +16,6 @@ Configuration file
 https://docs.splunk.com/Documentation/Splunk/7.1.2/Admin/AboutConfigurationFiles
 
 https://docs.splunk.com/Splexicon:Configurationfile
+
+Details of Buckets in Splunk
+****http://docs.splunk.com/Documentation/Splunk/5.0.1/Indexer/HowSplunkstoresindexes
