@@ -19,3 +19,5 @@ https://docs.splunk.com/Splexicon:Configurationfile
 
 Details of Buckets in Splunk
 ****http://docs.splunk.com/Documentation/Splunk/5.0.1/Indexer/HowSplunkstoresindexes
+
+https://answers.splunk.com/answers/667128/does-anyone-have-an-updated-dockerfile-for-710.html
