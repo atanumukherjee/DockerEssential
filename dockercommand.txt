@@ -65,3 +65,30 @@ The most important here is the -d option, which stands for detached.
 It means that command you initially provided to the container (/bin/bash) 
 will be run in background and the container will not stop immediately.
 ******************************************************************************
+
+
+Instructor Example
+Mumshad Mannambeth
+Containerize any application/script/task using Docker and share it with the student community.
+
+Submit your answer by providing a brief description of what you have Dockerized and share links to Image on Dockerhub and Dockerfile on your github account. Use the below format to submit your answer
+
+
+Overview: I have containerized <application>. <Brief description of application>
+Instructions: Provide instructions to run the application and the additional options that may be required such as port mapping volume mapping etc.
+Docker Hub Link:
+Github Link with Dockerfile:
+
+
+
+Overview: I have containerized the ansible-playable application. Playable is an Ansible Playbook generator UI developed in MEAN stack using Yeoman angular-fullstack-generator and built using Docker. The tool may be used by an individual or a team to Generate Ansible Playbooks and test them
+
+
+Instructions:  Run using the below command:
+
+docker run -p 80:8080 mmumshad/ansible-playable 
+
+Docker Hub Link:  https://hub.docker.com/r/mmumshad/ansible-playable/
+
+
+Github Link with Dockerfile: https://github.com/mmumshad/ansible-playable/blob/master/Dockerfile

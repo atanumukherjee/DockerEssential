@@ -1,0 +1,23 @@
+search head clustering
+
+*****http://docs.splunk.com/Documentation/Splunk/7.1.2/DistSearch/SHCconfigurationoverview
+
+configure the universal forwarder
+******http://docs.splunk.com/Documentation/Forwarder/7.1.3/Forwarder/Configuretheuniversalforwarder
+
+Install and configure the Splunk INdexer
+*****http://docs.splunk.com/Documentation/MSExchange/3.4.4/DeployMSX/InstallaSplunkIndexer
+
+Setup deployment server and create the server.class
+******http://docs.splunk.com/Documentation/MSExchange/3.4.4/DeployMSX/Setupadeploymentserver
+
+Configuration file
+***********http://docs.splunk.com/Documentation/Splunk/6.4.1/Admin/Listofconfigurationfiles
+https://docs.splunk.com/Documentation/Splunk/7.1.2/Admin/AboutConfigurationFiles
+
+https://docs.splunk.com/Splexicon:Configurationfile
+
+Details of Buckets in Splunk
+****http://docs.splunk.com/Documentation/Splunk/5.0.1/Indexer/HowSplunkstoresindexes
+
+https://answers.splunk.com/answers/667128/does-anyone-have-an-updated-dockerfile-for-710.html
