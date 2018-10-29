@@ -21,3 +21,10 @@ Details of Buckets in Splunk
 ****http://docs.splunk.com/Documentation/Splunk/5.0.1/Indexer/HowSplunkstoresindexes
 
 https://answers.splunk.com/answers/667128/does-anyone-have-an-updated-dockerfile-for-710.html
+
+*****Add and edit index in indexer
+http://docs.splunk.com/Documentation/Splunk/6.2.2/Indexer/Setupmultipleindexes#Create_and_edit_indexes
+https://www.splunk.com/en_us/training/videos/getting-data-in-with-forwarders.html
+http://docs.splunk.com/Documentation/Splunk/7.2.0/Data/MonitorfilesanddirectoriesusingtheCLI
+http://docs.splunk.com/Documentation/Forwarder/7.2.0/Forwarder/Configuretheuniversalforwarder
+http://docs.splunk.com/Documentation/Forwarder/7.2.0/Forwarder/Installanixuniversalforwarder
