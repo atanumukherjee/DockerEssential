@@ -28,3 +28,7 @@ https://www.splunk.com/en_us/training/videos/getting-data-in-with-forwarders.htm
 http://docs.splunk.com/Documentation/Splunk/7.2.0/Data/MonitorfilesanddirectoriesusingtheCLI
 http://docs.splunk.com/Documentation/Forwarder/7.2.0/Forwarder/Configuretheuniversalforwarder
 http://docs.splunk.com/Documentation/Forwarder/7.2.0/Forwarder/Installanixuniversalforwarder
+
+**************How to configure splunk password**************
+https://docs.splunk.com/Documentation/Splunk/7.2.0/Security/Secureyouradminaccount
+https://answers.splunk.com/answers/455582/how-to-change-password-using-cli-in-splunk.html
