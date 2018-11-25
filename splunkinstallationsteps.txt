@@ -1,0 +1,55 @@
+Installation of Splunk
+
+Download the latest tar file
+execute the command below to extract the tar file
+---> [root@d3d855989802 splunk]# tar xvzf splunk-7.1.3-51d9cac7b837-Linux-x86_64.tgz -C /opt/splunk
+to start splunk in ur terminal
+----> splunk/bin/splunk start --accept-license
+to enable splunk at boot time
+----> [root@d3d855989802 splunk]# splunk/bin/splunk enable boot-start
+check the splunk is enable or not
+[root@d3d855989802 splunk]# ls -lrt /etc/init.d/splunk
+-rwx------. 1 root root 995 Oct 27 00:21 /etc/init.d/splunk
+
+Installation of Universal forwarder
+Execute the below command in other box for universal forwarder
+tar xvzf splunkforwarder-7.2.0-8c86330ac18-Linux-x86_64.tgz -C /opt/splunk
+[root@39aa82e63c03 splunkforwarder]# ls -lrt
+total 128
+-r--r--r--.  1 10777 10777 63711 Sep 28 17:04 license-eula.txt
+-r--r--r--.  1 10777 10777    57 Sep 28 17:04 copyright.txt
+-r--r--r--.  1 10777 10777   846 Sep 28 17:07 README-splunk.txt
+drwxr-xr-x.  3 10777 10777    41 Sep 28 17:30 share
+drwxr-xr-x.  3 10777 10777    58 Sep 28 17:30 openssl
+drwxr-xr-x.  2 10777 10777    27 Sep 28 17:30 include
+-rw-r--r--.  1 10777 10777     0 Sep 28 17:30 ftr
+drwxr-xr-x. 13 10777 10777  4096 Sep 28 17:30 etc
+drwxr-xr-x.  5 10777 10777  4096 Sep 28 18:00 lib
+drwxr-xr-x.  3 10777 10777  4096 Sep 28 18:00 bin
+-r--r--r--.  1 10777 10777 40974 Sep 28 18:00 splunkforwarder-7.2.0-8c86330ac18-linux-2.6-x86_64-manifest
+[root@39aa82e63c03 splunkforwarder]# pwd
+/opt/splunk/splunkforwarder
+[root@39aa82e63c03 splunkforwarder]#
+[root@39aa82e63c03 splunkforwarder]# bin/splunk start --accept-license
+
+
+create a new app . Create the below directory under
+SPLUNK_HOME/etc/app/
+<testapp>/local/input.conf
+Add the stanza in the input.conf file
+
+[monitor:///opt/IBM/middleware/user_projects/domains/Test/servers/ITM_server*/logs/*(.out|.log)*]
+ index=app
+ sourcetype=IBM:AUT:TAM
+ blacklist = (\.(tar|gz|bz2|tar.gz|tgz|tbz|tbz2|zip|z)$)
+ 
+ Configure the universal forwarder to connect to a receiving indexer by the below command
+ [root@39aa82e63c03 bin]# ./splunk add forward-server 172.17.0.2:9997
+Splunk username: <splunkforwarder_username>
+Password:
+Added forwarding to: 172.17.0.2:9997.
+[root@39aa82e63c03 bin]#
+
+ 
+
+
