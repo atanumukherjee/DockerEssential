@@ -10,6 +10,6 @@ So we have to link app container to mongodb. See the below command
 
 Pull the mongo db from docker hub
 
-```docker pull mongo
-docker run -d --name db mongo```
+```docker pull mongo```
+```docker run -d --name db mongo```
 
