@@ -1,0 +1,27 @@
+mysql -u root -h localhost -p
+
+CREATE TABLE users (
+	id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+	firstname VARCHAR(30) NOT NULL,
+	lastname VARCHAR(30) NOT NULL,
+	email VARCHAR(50) NOT NULL,
+	age INT(3),
+	location VARCHAR(50),
+	date TIMESTAMP);
+
+INSERT INTO users (firstname, lastname, email, age, location) values ('atanu','mukherjee','atanu.mukh728@gmail.com','34','London');
+
+SHOW COLUMNS FROM users;
+
+MariaDB [test1]> select * from users;
++----+-----------+-----------+-------------------------+------+----------+---------------------+
+| id | firstname | lastname  | email                   | age  | location | date                |
++----+-----------+-----------+-------------------------+------+----------+---------------------+
+|  1 | atanu     | mukherjee | atanu.mukh728@gmail.com |   34 | London   | 2019-02-22 15:15:08 |
++----+-----------+-----------+-------------------------+------+----------+---------------------+
+1 row in set (0.00 sec)
+
+MariaDB [test1]> select * from users;
+
+
+quit
