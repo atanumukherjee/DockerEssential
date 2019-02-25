@@ -1,0 +1,10 @@
+services: 3
+  web:
+    image: nginx:alpine
+    ports:
+      - "3000:3000"
+    networks:
+      - overlay
+    deploy:
+      mode: replicated
+      replicas: 5
