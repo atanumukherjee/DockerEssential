@@ -1,3 +1,4 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y iputils-ping
-CMD ["/bin/ping","localhost"]
+Entrypoint ["/bin/ping","-c","3"]
+CMD ["localhost"]
