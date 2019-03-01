@@ -1,0 +1,17 @@
+version: '3'
+networks:
+  nw01:
+    driver: bridge
+services:
+  node:
+    build: .
+    ports:
+      - "5000:3000"
+    depends_on:
+      - dbase
+    networks:
+      - nw01
+  dbase:
+    image: mongo 
+    networks:
+      - nw01

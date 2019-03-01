@@ -1,0 +1,27 @@
+version: "3"
+
+networks:
+  vote:
+    driver: bridge
+
+services:
+  vote:
+    image: schoolofdevops/vote
+    ports:
+      - 80
+    networks:
+      - vote
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    networks:
+      - vote
+
+  worker:
+    image: schoolofdevops/vote-worker
+    networks:
+      - vote
+    depends_on:
+      - redis
