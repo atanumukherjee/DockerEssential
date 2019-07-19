@@ -8,6 +8,9 @@ services:
                 SSH_MASTER_USER: ${SSH_MASTER_USER}
                 SSH_MASTER_PASS: ${SSH_MASTER_PASS}
         hostname: node
+        container_name: node
+        restart: always
+
         ports:
             - "2222:22"
     node1:
@@ -17,6 +20,9 @@ services:
                SSH_MASTER_USER: ${SSH_MASTER_USER}
                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
        hostname: node1
+       container_name: node1
+       restart: always
+
        ports:
            - "1222:22"
     db:
@@ -26,6 +32,7 @@ services:
                SSH_MASTER_USER: ${SSH_MASTER_USER}
                SSH_MASTER_PASS: ${SSH_MASTER_PASS} 
        hostname: db
+       container_name: db
        restart: always
        ports:
            - "8222:22"
@@ -33,4 +40,18 @@ services:
            - "8000:8000"
            - "8001:8080"
            - "3306:3306"
+    lb:
+       build:
+           context: .
+           args:
+               SSH_MASTER_USER: ${SSH_MASTER_USER}
+               SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+       hostname: lb
+       container_name: lb
+       restart: always
+       ports:
+           - "5222:22"
+           - "5008:80"
+           - "5000:8000"
+           - "5001:8080"
 
