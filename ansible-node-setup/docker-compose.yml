@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+    node:
+        build:
+            context: .
+            args:
+                SSH_MASTER_USER: ${SSH_MASTER_USER}
+                SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+        hostname: node
+        ports:
+            - "2222:22"
+    node1:
+       build:
+           context: .
+           args:
+               SSH_MASTER_USER: ${SSH_MASTER_USER}
+               SSH_MASTER_PASS: ${SSH_MASTER_PASS}
+       hostname: node1
+       ports:
+           - "1222:22"
+    db:
+       build:
+           context: .
+           args:
+               SSH_MASTER_USER: ${SSH_MASTER_USER}
+               SSH_MASTER_PASS: ${SSH_MASTER_PASS} 
+       hostname: db
+       restart: always
+       ports:
+           - "8222:22"
+           - "8008:80"
+           - "8000:8000"
+           - "8001:8080"
+           - "3306:3306"
+
