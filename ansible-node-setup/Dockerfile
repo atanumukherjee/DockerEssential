@@ -8,7 +8,8 @@ RUN apt-get update \
     nano \
     sudo \
     vim \
-    openssh-server
+    openssh-server \
+    python
  
 COPY ssh_config /etc/ssh/ssh_config
 COPY sshd_config /etc/ssh/sshd_config
