@@ -1,5 +1,14 @@
 version: '3'
 
+networks:
+  ansible_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      -
+        subnet: 172.16.0.0/16
+
 services:
     node:
         build:
@@ -70,12 +79,3 @@ services:
            - "5008:80"
            - "5000:8000"
            - "5001:8080"
-
-networks:
-  ansible_net:
-    driver: bridge
-    ipam:
-      driver: default
-      config:
-      -
-        subnet: 172.16.0.0/16
